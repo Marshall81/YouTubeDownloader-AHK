@@ -139,7 +139,7 @@ About:
 	;Gui 2: Font,cWhite
 	Gui 2: Add, Text,,`nEin kleines Programm welcher Videos u. Audios von Youtube `nund anderen Seiten herunterlaedt.`n`nUeberarbeitet von Mesut Uenver
 	Gui 2: Add, Text,,Version - %ver%`n
-	Gui 2: Add, Button, x105 y82 w96 h19 gUpdate hwndUpdate, Check auf Updates
+	Gui 2: Add, Button, x105 y82 w99 h19 gUpdate hwndUpdate, Check auf Updates
 	Gui 2: show,NoActivate,Ueber YouTubeDL %ver%
 	Gui 2: +AlwaysOnTop
 	return
