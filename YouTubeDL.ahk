@@ -76,8 +76,8 @@ Gui, Add, Button,hwndstart x132 yP w85 h23 -wrap BackgroundTrans gStart vDown , 
 Gui, Add, Button,hwndAbout x232 yP w68 h25 -wrap gAbout , Ueber
 Gui, Add, Button,hwndQuit x310 yP w65 h23 gQuiter , Beenden
 Gui, Add, Button,hwndBrowse x310 y29 w88 h20 gBrowse ,Ausgangsordner
-Gui, Add, Button,hwndPaste x255 y29 w55 h19 gPaste ,Einfügen
-Gui, Add, DDL,hwndDDLQual R15  x311 y55  w74 h20 Choose1 vQual gQuali,Qualität
+Gui, Add, Button,hwndPaste x255 y29 w58 h20 gPaste ,Einfuegen
+Gui, Add, DDL,hwndDDLQual R15  x311 y55  w74 h20 Choose1 vQual gQuali,Qualitaet
 Gui, Add, CheckBox,hwndFast x132 y55 w145 h19 vFastM, Schnell (Nur Youtube)
 Gui, Add, link,hwndSuppLink cRed x290 y6 w174 h14 , <a href="https://github.com/AkshayCraZzY/YouTubeDownloader-AHK/blob/master/SupportedSites.md">Unterstütze Webseiten</a>
 Gui, Margin, ,10
