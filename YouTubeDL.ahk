@@ -69,17 +69,17 @@ FileDelete, %A_Temp%\update_check.txt
 Gui,color,%bgcolor%
 ;Gui, Font,cWhite
 Gui, Add, Text, , Gib den Download Link ein :	
-Gui, Add, Edit, hwndurl Y+10 w245 h19 vUrl
-Gui, Add, Radio,hwndType y+13 w103 h13 vVid , Video (mp4/mkv)
+Gui, Add, Edit, hwndurl Y+10 w+3 w240 h19 vUrl
+Gui, Add, Radio,hwndType y+10 w103 h13 vVid , Video (mp4/mkv)
 Gui, Add, Radio,hwndType1 w78 h13 VAud , Audio (mp3)
 Gui, Add, Button,hwndstart x132 yP w85 h23 -wrap BackgroundTrans gStart vDown , Start 
-Gui, Add, Button,hwndAbout x232 yP w68 h25 -wrap gAbout , Ueber
-Gui, Add, Button,hwndQuit x310 yP w65 h23 gQuiter , Beenden
-Gui, Add, Button,hwndBrowse x310 y29 w88 h20 gBrowse ,Ausgangsordner
-Gui, Add, Button,hwndPaste x255 y29 w58 h20 gPaste ,Einfuegen
-Gui, Add, DDL,hwndDDLQual R15  x311 y55  w74 h20 Choose1 vQual gQuali,Qualitaet
+Gui, Add, Button,hwndAbout x232 yP w65 h23 -wrap gAbout , Ueber
+Gui, Add, Button,hwndQuit x312 yP w65 h23 gQuiter , Beenden
+Gui, Add, Button,hwndBrowse x312 y29 w88 h20 gBrowse ,Ausgangsordner
+Gui, Add, Button,hwndPaste x253 y29 w58 h20 gPaste ,Einfuegen
+Gui, Add, DDL,hwndDDLQual R15  x313 y55  w74 h20 Choose1 vQual gQuali,Qualitaet
 Gui, Add, CheckBox,hwndFast x132 y55 w145 h19 vFastM, Schnell (Nur Youtube)
-Gui, Add, link,hwndSuppLink cRed x290 y6 w174 h14 , <a href="https://github.com/AkshayCraZzY/YouTubeDownloader-AHK/blob/master/SupportedSites.md">Unterstütze Webseiten</a>
+Gui, Add, link,hwndSuppLink cRed x285 y6 w174 h14 , <a href="https://github.com/Marshall81/YouTubeDownloader-AHK/blob/master/Webseiten.md">Unterstuetze Webseiten</a>
 Gui, Margin, ,10
 Gui, Add, StatusBar,  -Theme Background%bgcolor% hwndStat ; SBARS_SIZEGRIP
 ;Gui, Add, StatusBar, hwndStat
