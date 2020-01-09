@@ -1,5 +1,5 @@
-# Supported Sites :
-*(Total 1094 domains supported)*
+# Unterstützte Webseiten :
+*(Insgesammt werden 1094 Webseiten unterstützt)*
  - **1tv**: 
  - **1up.com**
  - **20min**
