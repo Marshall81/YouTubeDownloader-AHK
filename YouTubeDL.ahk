@@ -38,7 +38,7 @@ CheckFiles:
 	if !FileExist("youtube-dl.exe")
 	{
 		MsgBox, 16, , Du musst 'youtube-dl.exe' im selben Ordner packen wie dieses Programm!
-		msgbox,36,, Möchtest Du 'youtube-dl.exe' downloaden?
+		msgbox,36,, Moechtest Du 'youtube-dl.exe' downloaden?
 		IfMsgBox, No
 			return
 		IfMsgBox, Yes	
@@ -48,7 +48,7 @@ CheckFiles:
 	if !FileExist("ffmpeg.exe")
 	{
 		MsgBox, 16, , Du musst 'ffmpeg.exe' im selben Ordner packen wie dieses Programm!
-		msgbox,36,, Möchtest Du 'ffmpeg.exe' downloaden? ?
+		msgbox,36,, Moechtest Du 'ffmpeg.exe' downloaden? ?
 		IfMsgBox, No
 			return
 		IfMsgBox, Yes	
@@ -57,7 +57,7 @@ CheckFiles:
 	}
 }
 	
-ver=v0.5.1
+ver=v0.5.0
 VidTitle:="%(title)s.%(ext)s"
 bgcolor=FAE208
 FileDelete, update.ahk
@@ -84,7 +84,7 @@ Gui, Margin, ,10
 Gui, Add, StatusBar,  -Theme Background%bgcolor% hwndStat ; SBARS_SIZEGRIP
 ;Gui, Add, StatusBar, hwndStat
 GuiControl, Disable, Qual
-Gui, Show,  w400, YouTubeDL %ver%
+Gui, Show,  w402 h130, YouTubeDL %ver%
 
 
 Gui, +LastFound  
@@ -106,14 +106,14 @@ SB_SetText(" Ready",2)
 {
 AddTooltip(Type,"Option Video Format")
 AddTooltip(type1,"Option nur Audio Format")
-AddTooltip(Start,"Starte die Initialisierung`nund anschließend steht die Option -Download- zur Verfügung")
-AddTooltip(about,"Info über das Programm und die Option auf Updates")
+AddTooltip(Start,"Starte die Initialisierung`nund anschließend steht die Option -Download- zur Verfuegung")
+AddTooltip(about,"Info ueber das Programm und die Option auf Updates")
 AddTooltip(quit,"Beendet das Programm")
-AddTooltip(DDLQual,"Wählt die Quallität des Download´s")
-AddTooltip(Browse,"Wähle den Ordner für das Video")
-AddTooltip(Fast,"Überspringt den Import der MetaData welche für die Wahl der Download Quallität steht`nAnstelle dessen wird immer die beste Quallität gedownloadet(Funktioniert nur bei Youtube)`n")
+AddTooltip(DDLQual,"Waehlt die Quallitaet des Download´s")
+AddTooltip(Browse,"Waehle den Ordner fuer das Video")
+AddTooltip(Fast,"Ueberspringt den Import der MetaData welche fuer die Wahl der Download Quallitaet ist.`nAnstelle dessen wird immer die beste Quallitaet gedownloadet(Funktioniert nur bei Youtube)`n")
 AddTooltip(stat,"Zeigt den Status des Programms und den Fortschritt des Download´s")
-AddTooltip(SuppLink,"Zeigt welche Internetseiten von dieser Software unterstützt werden")
+AddTooltip(SuppLink,"Zeigt welche Internetseiten von dieser Software unterstuetzt werden")
 
 Return
 }
@@ -137,10 +137,10 @@ About:
 	Gui, Submit,NoHide
 	;Gui 2: color, fFffff
 	;Gui 2: Font,cWhite
-	Gui 2: Add, Text,,`nEin kleines Programm welcher Videos u. Audios von Youtube `nund anderen Seiten herunterlädt.`n`nÜberarbeitet von Mesut Ünver
+	Gui 2: Add, Text,,`nEin kleines Programm welcher Videos u. Audios von Youtube `nund anderen Seiten herunterlaedt.`n`nUeberarbeitet von Mesut Uenver
 	Gui 2: Add, Text,,Version - %ver%`n
-	Gui 2: Add, Button, x105 y82 w96 h19 gUpdate hwndUpdate, Check for updates
-	Gui 2: show,NoActivate,Über YouTubeDL %ver%
+	Gui 2: Add, Button, x105 y82 w96 h19 gUpdate hwndUpdate, Check auf updates
+	Gui 2: show,NoActivate,Ueber YouTubeDL %ver%
 	Gui 2: +AlwaysOnTop
 	return
 }
@@ -218,10 +218,10 @@ Update:
 		Return DllCall("Wininet.dll\InternetGetConnectedState", "Str", flag,"Int",0)
 	}
 	
-	FileAppend,Software by Akshay Parakh und überarbeitet von Mesut Ünver, %A_Temp%\update_check.txt
+	FileAppend, ..ueberarbeitet von Mesut Uenver, %A_Temp%\update_check.txt
 	
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-	whr.Open("GET", "https://raw.githubusercontent.com/AkshayCraZzY/YouTubeDownloader-AHK/master/version.txt", true)
+	whr.Open("GET", "https://raw.githubusercontent.com/Marshall81/YouTubeDownloader-AHK/master/version.txt", true)
 	whr.Send()
 	; Using 'true' above and the call below allows the script to remain responsive.
 	whr.WaitForResponse()
@@ -231,7 +231,7 @@ Update:
 		MsgBox, 262144,, Du hast die aktuellste Version
 	else
 	{
-		msgbox,4131,, Neue Version %latver%ist verfügbar.`nMöchtest Du es downloaden?                     
+		msgbox,4131,, Neue Version %latver%ist verfuegbar.`nMoechtest Du es downloaden?                     
 		IfMsgBox, No
 			return
 		IfMsgBox, Yes	
@@ -242,13 +242,13 @@ Update:
 				#NoEnv 
 				SetBatchLines -1
 				#SingleInstance Force 
-				
+				/*
 				ifNotExist,%A_Temp%\update_check.txt
 				{
 					Msgbox, This executable can only be run through main application 
 					ExitApp
 				}
-
+                */
 				Gui, Add, Progress,  w280 h10 -Smooth vMyProgressBar 
 				Gui, Add, StatusBar  
 				Gui, Show,,YouTubeDL Update
@@ -265,7 +265,7 @@ Update:
 				UpdateBlock:
 				{
 					FileDelete,YouTubeDL_updated.ahk
-					UrlDownloadToFile,https://raw.githubusercontent.com/AkshayCraZzY/YouTubeDownloader-AHK/master/YouTubeDL.ahk,YouTubeDL_updated.ahk
+					UrlDownloadToFile,https://raw.githubusercontent.com/Marshall81/YouTubeDownloader-AHK/master/YouTubeDL.ahk,YouTubeDL_updated.ahk
 					GuiControl, , MyProgressBar, 5
 					Loop 100
 					{
@@ -348,10 +348,10 @@ return
 	{
 		Thread, NoTimers
 		
-		FileSelectFolder, Folder,	shell:::{20D04FE0-3AEA-1069-A2D8-08002B30309D}  , 3,Wähle ein Ordner für den Download.
+		FileSelectFolder, Folder,	shell:::{20D04FE0-3AEA-1069-A2D8-08002B30309D}  , 3,Waehle ein Ordner fuer den Download.
 		Thread, NoTimers, false
 		if Folder =
-		MsgBox, Kein Ordner ausgewählt.
+		MsgBox, Kein Ordner ausgewaehlt.
 		else
 		;MsgBox, You selected folder "%Folder%".
 		return
@@ -436,7 +436,7 @@ Start:
 		
 		if url=
 		{
-			MsgBox, 48, ,  Download Link nicht eingefügt!
+			MsgBox, 48, ,  Download Link nicht eingefuegt!
 			return
 		}
 		IfInString,url, http
@@ -444,12 +444,12 @@ Start:
 		}
 		else
 		{
-			MsgBox, 48, ,  Kein gültiger Download Link!
+			MsgBox, 48, ,  Kein gueltiger Download Link!
 			return
 		}
 		if (vid=0 and aud=0)
 		{
-			MsgBox, 48, ,  Wähle zwischen Video/Audio!
+			MsgBox, 48, ,  Waehle zwischen Video/Audio!
 			return
 		}
 		IfInString,url, youtu
@@ -597,7 +597,7 @@ Start:
 			if qual=144p
 				DWqual=160
 			
-			;MsgBox, 262144, Beste verfügbare Qualität, % DWqual
+			;MsgBox, 262144, Beste verfuegbare Qualitaet, % DWqual
 			
 			GuiControl,enable, Down
 			GuiControl,,Down,Download
