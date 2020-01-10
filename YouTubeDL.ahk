@@ -57,7 +57,7 @@ CheckFiles:
 	}
 }
 	
-ver=v0.5.0
+ver=v0.5.1
 VidTitle:="%(title)s.%(ext)s"
 bgcolor=FAE208
 FileDelete, update.ahk
